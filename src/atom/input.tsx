@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 interface InputProps {
-    value?: string
+    value: string
 }
 
 export function Input({value: initialValue}: InputProps) {
