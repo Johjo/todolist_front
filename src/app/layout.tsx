@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import {provide} from "@/injection.server";
+import {PAGE_SOURCE} from "@/app/injectionKeys";
+import {PageSource} from "@/app/page";
+
+class PageSourceDemo implements PageSource {
+    taskTitle: string = "buy the milk";
+}
+
+provide(PAGE_SOURCE, new PageSourceDemo())
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

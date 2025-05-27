@@ -1,6 +1,7 @@
-import {act, render} from "@testing-library/react";
+import {render} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import {Input} from "@/atom/input";
+import React from "react";
 
 describe('input', () => {
     it('should render input', () => {

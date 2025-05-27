@@ -1,6 +1,7 @@
 import {render} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import {CheckBox} from "@/atom/checkBox";
+import React from "react";
 
 describe('checkbox', () => {
     it('should render checkbox', () => {

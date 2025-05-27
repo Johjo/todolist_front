@@ -1,4 +1,5 @@
 import {useState} from "react";
+import React from "react";
 
 interface CheckBoxProps {
     onChange: (isChecked: boolean) => void
@@ -11,3 +12,4 @@ export function CheckBox({onChange}: CheckBoxProps) {
         onChange(e.target.checked);
     }}/>;
 }
+
