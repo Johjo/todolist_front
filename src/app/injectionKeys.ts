@@ -1,4 +1,4 @@
 import {key} from "piqure";
-import {PageSource} from "@/app/page";
+import {PageSourcePort} from "@/app/page";
 
-export const PAGE_SOURCE = key<PageSource>('PageSource')
+export const PAGE_SOURCE = key<PageSourcePort>('PageSource')
