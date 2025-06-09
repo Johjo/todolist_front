@@ -4,6 +4,7 @@ import "./globals.css";
 import {provide} from "@/injection.server";
 import {PAGE_SOURCE} from "@/app/injectionKeys";
 import {PageSource} from "@/secondary/pageSource";
+import {DependencyInjection} from "@/app/dependencyInjection";
 
 provide(PAGE_SOURCE, new PageSource())
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+        <DependencyInjection />
         {children}
         </body>
         </html>

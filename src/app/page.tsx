@@ -1,10 +1,10 @@
 "use client"
 import React, {useEffect} from "react";
-import {inject} from "@/injection.server";
 import {PAGE_SOURCE} from "@/app/injectionKeys";
+import {inject} from "@/injection.client";
 
 export interface PageSourcePort {
-    getAllTasks(): Promise<string[]>;
+    getAllTasks(todolistKey: string): Promise<string[]>;
 }
 
 export default function Page() {
@@ -12,12 +12,12 @@ export default function Page() {
 
     useEffect(() => {
         const pageSource = inject(PAGE_SOURCE)
-        pageSource.getAllTasks().then(setTasks)
+        pageSource.getAllTasks(`64f0c646-b8c8-420c-acf9-a12cec18e74a`).then(setTasks)
     }, []);
 
     return (
         <>
-            {tasks.length === 0 && <div>Please, open a task a</div>}
+            {tasks.length === 0 && <div>Please, open a task</div>}
             {tasks.map((task, index) => <div key={index}>{task}</div>)}
         </>);
 }

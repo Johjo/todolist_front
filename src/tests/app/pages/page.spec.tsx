@@ -1,8 +1,8 @@
 import {render, waitFor} from "@testing-library/react";
 import Page, {PageSourcePort} from "@/app/page";
 import React from "react";
-import {provide} from "@/injection.server";
 import {PAGE_SOURCE} from "@/app/injectionKeys";
+import {provide} from "@/injection.client";
 
 const EMPTY_STATE_TEXT = 'Please, open a task';
 
