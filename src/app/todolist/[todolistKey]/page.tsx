@@ -2,18 +2,24 @@
 import React, {useEffect} from "react";
 import {PAGE_SOURCE} from "@/app/injectionKeys";
 import {inject} from "@/injection.client";
+import {useParams} from "next/navigation";
 
 export interface PageSourcePort {
     getAllTasks(todolistKey: string): Promise<string[]>;
 }
 
-export default function Page() {
+type UrlParams = {
+    todolistKey: string
+}
+
+export default function Page(): React.JSX.Element {
     const [tasks, setTasks] = React.useState<string[]>([]);
+    const urlParams = useParams<UrlParams>();
 
     useEffect(() => {
         const pageSource = inject(PAGE_SOURCE)
-        pageSource.getAllTasks(`64f0c646-b8c8-420c-acf9-a12cec18e74a`).then(setTasks)
-    }, []);
+        pageSource.getAllTasks(urlParams.todolistKey).then(setTasks)
+    }, [urlParams]);
 
     return (
         <>

@@ -1,5 +1,5 @@
 import {render, waitFor} from "@testing-library/react";
-import Page, {PageSourcePort} from "@/app/page";
+import Page, {PageSourcePort} from "@/app/todolist/[todolistKey]/page";
 import React from "react";
 import {PAGE_SOURCE} from "@/app/injectionKeys";
 import {provide} from "@/injection.client";
